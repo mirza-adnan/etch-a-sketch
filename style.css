@@ -70,12 +70,19 @@ input[type=number]:focus {
 }
 
 #grid-container {
-    width: 600px;
+    width: 35vw;
     height: 600px;
     margin: 0 auto;
     border: 1px solid black;
     background-color: white;
     grid-column: 2 / 3;
+    display: grid;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 #colors {
@@ -85,41 +92,61 @@ input[type=number]:focus {
     height: 150px;
     display: grid;
     grid-gap: 0px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    margin-left: 10px;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: repeat(6, 1fr);
+    margin-left: 16px;
 
 }
+
 
 .color-button:hover {
     cursor: pointer;
 }
 
-
-#red {
-    background-color: red;
+.color-button:active {
+    border: 1px solid black;
 }
 
-#orange {
-    background-color: orange;
+
+.red {
+    background-color: #ff0000;
 }
 
-#blue {
-    background-color: blue;
+.orange {
+    background-color: #ffa500;
 }
 
-#cyan {
-    background-color: cyan;
+.blue {
+    background-color: #0000ff;
 }
 
-#green {
-    background-color: green;
+.cyan {
+    background-color: #00ffff;
 }
 
-#yellow {
-    background-color: yellow;
+.green {
+    background-color: #008000;
 }
 
+.yellow {
+    background-color: #ffff00;
+}
+
+.purple {
+    background-color: #6027b4;
+}
+
+.light-green {
+    background-color: #8ce65b;
+}
+
+.white {
+    background-color: white;
+}
+
+.black {
+    background-color: black;
+}
 
 #rainbow {
     grid-column: 1 / 3;
@@ -127,12 +154,30 @@ input[type=number]:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to bottom right, red, green, blue);
+    background-image: linear-gradient(to bottom right, #b42760, #6027b4, #5bd6e6, #8ce65b, #e6b35b);
 }
 
 #reset {
-    grid-column: 1 / 3;
+    width: 80px;
+    margin-left: 6px;
+    margin-top: 10px;
+    line-height: 25px;
+    background-color: #e8a87c;
+    border: 1px solid #e27d60;
+    outline: none;
+    border-radius: 50px;
 }
 
+#reset:hover {
+    box-shadow: 0px 0px 8px #ffb595;
+    cursor: pointer;
+}
 
+#reset:active {
+    background-color: #e27d60;
+}
+
+.pixel {
+    outline: 1px solid black;
+}
 

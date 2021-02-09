@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +9,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <h1 id="title">Etch-A-Sketch</h1>
     </header>
     <div id="container">
         <div id="grid-size">
-            <input type="number" min="1" max="100" name="gridsize" id="grid-size-input" class="grid-size" placeholder="Enter grid size">
+            <input type="number" min="1" max="100" name="gridsize" id="grid-size-input" class="grid-size"
+                placeholder="Enter grid size">
             <button type="button" id="apply" class="grid-size">Apply</button>
         </div>
         <div id="grid-colors">
             <div id="grid-container">
 
             </div>
-            <div id="colors">
-                <div class="color-button" id="red"></div>
-                <div class="color-button" id="orange"></div>
-                <div class="color-button" id="blue"></div>
-                <div class="color-button" id="cyan"></div>
-                <div class="color-button" id="green"></div>
-                <div class="color-button" id="yellow"></div>
-                <div class="color-button" id="rainbow">Rainbow</div>
+            <div id="buttons">
+                <div id="colors">
+                    <div class="color-button red" id="aff0000"></div>
+                    <div class="color-button orange" id="affa500"></div>
+                    <div class="color-button blue" id="a0000ff"></div>
+                    <div class="color-button cyan" id="a00ffff"></div>
+                    <div class="color-button green" id="a008000"></div>
+                    <div class="color-button yellow" id="affff00"></div>
+                    <div class="color-button purple" id="a6027b4"></div>
+                    <div class="color-button light-green" id="a8ce65b"></div>
+                    <div class="color-button black" id="a000000"></div>
+                    <div class="color-button white" id="affffff"></div>
+                    <div class="rainbow" id="rainbow"></div>
+                </div>
                 <button id="reset" type="reset">Reset</button>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
