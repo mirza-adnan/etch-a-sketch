@@ -1,5 +1,17 @@
 const grid = document.querySelector("#grid-container");
+const red = document.querySelector("#aff0000");
+const orange = document.querySelector("#affa500");
+const blue = document.querySelector("#a0000ff");
+const cyan = document.querySelector("#a00ffff");
+const green = document.querySelector("#a008000");
+const yellow = document.querySelector("#affff00");
+const purple = document.querySelector("#a6027b4");
+const light_green = document.querySelector("a8ce65b");
+const black = document.querySelector("a000000");
+const white = document.querySelector("affffff");
+const reset = document.querySelector("#reset");
 
+// functions for changing and filling up the grid with divs
 function set_size(num) {
     grid.style.cssText = `grid-template-columns: repeat(${String(num)}, 1fr); grid-template-rows: repeat(${String(num)}, 1fr);`;
 }
@@ -12,22 +24,13 @@ function fill_grid(num) {
     }
 }
 
+// setting default grid size
 set_size(20)
 fill_grid(20)
 
 let bg = "black";
 
-const red = document.querySelector("#aff0000");
-const orange = document.querySelector("#affa500");
-const blue = document.querySelector("#a0000ff");
-const cyan = document.querySelector("#a00ffff");
-const green = document.querySelector("#a008000");
-const yellow = document.querySelector("#affff00");
-const purple = document.querySelector("#a6027b4");
-const light_green = document.querySelector("a8ce65b");
-const black = document.querySelector("a000000")
-const white = document.querySelector("affffff")
-
+// color changing functionality 
 colors = document.querySelectorAll(".color-button");
 colors.forEach((color) => {
     color.addEventListener("click", function() {
@@ -37,3 +40,20 @@ colors.forEach((color) => {
     })
 })
 
+pixel_array = document.querySelectorAll(".pixel");
+pixel_array.forEach((pixel) => {
+    pixel.addEventListener("mouseover", function(){
+        pixel.style.cssText = `background-color: ${bg};`
+    })
+})
+
+// reset function
+reset.addEventListener("click", function(){
+    pixel_array = document.querySelectorAll(".pixel");
+    pixel_array.forEach((pixel) => {
+        pixel.style.backgroundColor = "white";
+    })
+})
+
+// to-do -> change grid size
+// to-do -> add rainbow colors

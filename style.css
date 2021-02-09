@@ -157,6 +157,10 @@ input[type=number]:focus {
     background-image: linear-gradient(to bottom right, #b42760, #6027b4, #5bd6e6, #8ce65b, #e6b35b);
 }
 
+#rainbow:hover {
+    cursor: pointer;
+}
+
 #reset {
     width: 80px;
     margin-left: 6px;
@@ -178,6 +182,6 @@ input[type=number]:focus {
 }
 
 .pixel {
-    outline: 1px solid black;
+    border: 1px solid black;
 }
 
