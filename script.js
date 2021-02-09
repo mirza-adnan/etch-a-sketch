@@ -40,12 +40,32 @@ colors.forEach((color) => {
     })
 })
 
-pixel_array = document.querySelectorAll(".pixel");
-pixel_array.forEach((pixel) => {
-    pixel.addEventListener("mouseover", function(){
-        pixel.style.cssText = `background-color: ${bg};`
+// drawing functionality
+change_color = function(){
+    this.style.cssText = `background-color: ${bg};`
+}
+
+let clicked = false;
+
+grid.addEventListener("click", function() {
+    if (clicked) {
+        clicked = false;
+    } else if (!clicked) {
+        clicked = true;
+    }
+    if (clicked) {
+        pixel_array = document.querySelectorAll(".pixel");
+        pixel_array.forEach((pixel) => {
+            pixel.addEventListener("mouseover", change_color)
     })
+    } else if (!clicked) {
+        pixel_array = document.querySelectorAll(".pixel");
+        pixel_array.forEach((pixel) => {
+            pixel.removeEventListener("mouseover", change_color);
+    })
+    }
 })
+
 
 // reset function
 reset.addEventListener("click", function(){
@@ -53,6 +73,7 @@ reset.addEventListener("click", function(){
     pixel_array.forEach((pixel) => {
         pixel.style.backgroundColor = "white";
     })
+    clicked = false;
 })
 
 // to-do -> change grid size
