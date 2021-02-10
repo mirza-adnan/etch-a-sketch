@@ -200,6 +200,39 @@ input[type=number]:focus {
     font-size: 15px;
 }
 
+@media screen and (max-width: 1200px) {
+    #grid-container {
+        height: 500px;
+        width: 650px;
+    }
+
+    #colors {
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #grid-container {
+        height: 450px;
+        width: 550px;
+    }
+
+    #colors {
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #grid-container {
+        height: 400px;
+        width: 450px;
+    }
+
+    #colors {
+        width: 60px;
+    }
+}
+
 @media screen and (max-width:480px) {
     #grid-container {
         height: 450px;
@@ -226,35 +259,7 @@ input[type=number]:focus {
     }
 }
 
-@media screen and (max-width: 768px) {
-    #grid-container {
-        height: 400px;
-        width: 450px;
-    }
 
-    #colors {
-        width: 60px;
-    }
-}
 
-@media screen and (max-width: 1024px) {
-    #grid-container {
-        height: 450px;
-        width: 550px;
-    }
 
-    #colors {
-        width: 60px;
-    }
-}
 
-@media screen and (max-width: 1200px) {
-    #grid-container {
-        height: 500px;
-        width: 650px;
-    }
-
-    #colors {
-        width: 60px;
-    }
-}
