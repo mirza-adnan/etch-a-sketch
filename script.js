@@ -1,3 +1,4 @@
+// reference to all required elements
 const grid = document.querySelector("#grid-container");
 const input = document.querySelector("#grid-size-input");
 const apply = document.querySelector("#apply");
@@ -50,6 +51,7 @@ colors.forEach((color) => {
 // drawing functionality
 change_color = function(){
     if (rainbow_clicked) {
+        // creating random rgb values
         const red = String(Math.floor(Math.random() * 256));
         const green = String(Math.floor(Math.random() * 256));
         const blue = String(Math.floor(Math.random() * 256));
@@ -62,6 +64,7 @@ change_color = function(){
 
 let clicked = false;
 
+// toggling mouseover event listeners when clicked inside the grid
 grid.addEventListener("click", function() {
     if (clicked) {
         clicked = false;
