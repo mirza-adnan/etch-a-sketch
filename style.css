@@ -7,6 +7,7 @@
 body {
     background-color: #f0e0a2;
     height: 100vh;
+    font-family: Poppins, sans-serif;
 }
 
 header {
@@ -68,12 +69,13 @@ input[type=number]:focus {
     margin-top: 20px;
     font-family: Poppins;
     font-size: 20px;
+    color: #5f7a5e;
 }
 
 #grid-colors{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -81,10 +83,11 @@ input[type=number]:focus {
     width: 35vw;
     height: 600px;
     margin: 0 auto;
-    border: 1px solid black;
+    outline: 1px solid black;
     background-color: white;
     grid-column: 2 / 3;
     display: grid;
+    padding: 0;
 }
 
 #buttons {
@@ -169,6 +172,10 @@ input[type=number]:focus {
     cursor: pointer;
 }
 
+#rainbow:active {
+    border: 1px solid black;
+}
+
 #reset {
     width: 80px;
     margin-left: 6px;
@@ -191,5 +198,10 @@ input[type=number]:focus {
 
 .pixel {
     border: 1px solid black;
+    padding: 0;
+    margin: 0;
 }
 
+#info {
+    font-size: 15px;
+}

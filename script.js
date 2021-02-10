@@ -1,4 +1,7 @@
 const grid = document.querySelector("#grid-container");
+const input = document.querySelector("#grid-size-input");
+const apply = document.querySelector("#apply");
+
 const red = document.querySelector("#aff0000");
 const orange = document.querySelector("#affa500");
 const blue = document.querySelector("#a0000ff");
@@ -23,6 +26,8 @@ function fill_grid(num) {
         grid.appendChild(pixel)
     }
 }
+
+
 
 // setting default grid size
 set_size(20)
@@ -57,7 +62,10 @@ grid.addEventListener("click", function() {
         pixel_array = document.querySelectorAll(".pixel");
         pixel_array.forEach((pixel) => {
             pixel.addEventListener("mouseover", change_color)
-    })
+        })
+        pixel_array.forEach((pixel) => {
+            pixel.addEventListener("click", change_color)
+        })
     } else if (!clicked) {
         pixel_array = document.querySelectorAll(".pixel");
         pixel_array.forEach((pixel) => {
@@ -65,6 +73,8 @@ grid.addEventListener("click", function() {
     })
     }
 })
+
+
 
 
 // reset function
@@ -76,5 +86,26 @@ reset.addEventListener("click", function(){
     clicked = false;
 })
 
-// to-do -> change grid size
+// function to remove pixels before resizing
+function remove_pixels() {
+    pixels = document.querySelectorAll(".pixel");
+    pixels.forEach((pixel) => {
+        grid.removeChild(pixel)
+    })
+}
+
+// applying grid resize
+apply.addEventListener("click", function() {
+    const size = Number(input.value);
+    if (input.value != "") {
+        if (size < 1 || size > 100) {
+            alert("Please provide a value within the range 1-100.")
+        } else {
+            remove_pixels()
+            set_size(size)
+            fill_grid(size)
+            input.value = "";
+        }
+    }
+})
 // to-do -> add rainbow colors
