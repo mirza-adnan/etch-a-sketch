@@ -80,8 +80,8 @@ input[type=number]:focus {
 }
 
 #grid-container {
-    width: 35vw;
-    height: 60vh;
+    width: 700px;
+    height: 600px;
     margin: 0 auto;
     outline: 1px solid black;
     background-color: white;
@@ -198,4 +198,63 @@ input[type=number]:focus {
 
 #info {
     font-size: 15px;
+}
+
+@media screen and (max-width:480px) {
+    #grid-container {
+        height: 450px;
+        width: 300px;
+    }
+
+    #colors {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    #grid-container {
+        height: 400px;
+        width: 250px;
+    }
+
+    #colors {
+        width: 40px;
+    }
+
+    #title {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #grid-container {
+        height: 400px;
+        width: 450px;
+    }
+
+    #colors {
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #grid-container {
+        height: 450px;
+        width: 550px;
+    }
+
+    #colors {
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #grid-container {
+        height: 500px;
+        width: 650px;
+    }
+
+    #colors {
+        width: 60px;
+    }
 }
