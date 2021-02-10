@@ -12,6 +12,7 @@ const purple = document.querySelector("#a6027b4");
 const light_green = document.querySelector("a8ce65b");
 const black = document.querySelector("a000000");
 const white = document.querySelector("affffff");
+const rainbow = document.querySelector("#rainbow");
 const reset = document.querySelector("#reset");
 
 // functions for changing and filling up the grid with divs
@@ -34,6 +35,7 @@ set_size(20)
 fill_grid(20)
 
 let bg = "black";
+let rainbow_clicked = false;
 
 // color changing functionality 
 colors = document.querySelectorAll(".color-button");
@@ -41,13 +43,21 @@ colors.forEach((color) => {
     color.addEventListener("click", function() {
         const button_color = color.getAttribute("id");
         bg = "#" + button_color.slice(1, -1) + button_color.slice(-1);
-        return bg
+        rainbow_clicked = false;
     })
 })
 
 // drawing functionality
 change_color = function(){
-    this.style.cssText = `background-color: ${bg};`
+    if (rainbow_clicked) {
+        const red = String(Math.floor(Math.random() * 256));
+        const green = String(Math.floor(Math.random() * 256));
+        const blue = String(Math.floor(Math.random() * 256));
+        bg = `rgb(${(red)}, ${green}, ${blue})`;
+        this.style.cssText = `background-color: ${bg};`;
+    } else {
+        this.style.cssText = `background-color: ${bg};`;
+    }  
 }
 
 let clicked = false;
@@ -108,4 +118,8 @@ apply.addEventListener("click", function() {
         }
     }
 })
-// to-do -> add rainbow colors
+
+// rainbow color
+rainbow.addEventListener("click", function() {
+    rainbow_clicked = true;
+})
